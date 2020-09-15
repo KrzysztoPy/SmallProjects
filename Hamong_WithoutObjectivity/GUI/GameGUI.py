@@ -15,4 +15,4 @@ def entry_name_player_two_gui():
 
 
 def lives_number_gui():
-    print("Number of chance can't be less from 0.")
+    print("\nNumber of chance can't be less from 0.\n")
