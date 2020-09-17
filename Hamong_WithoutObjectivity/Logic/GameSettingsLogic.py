@@ -25,15 +25,15 @@ def second_player_name(text, name):
             return sec_player_name
 
 
-def how_many_chance():
+def how_many_chance(question, too_less, too_many):
     while True:
-        print(gameSettingGui.how_much_lives_gui())
+        print(question)
         chance = inputData.get_only_int_data()
         if chance:
             if chance < 1:
-                print(gameSettingGui.lives_number_less_gui())
+                print(too_less)
             elif chance > 8:
-                print(gameSettingGui.lives_number_higher_gui())
+                print(too_many)
             else:
                 return chance
         else:
@@ -43,5 +43,8 @@ def how_many_chance():
 def start_game():
     player_names.append(name_player(gameSettingGui.entry_name_player_one_gui()))
     player_names.append(name_player(gameSettingGui.entry_name_player_two_gui(), player_names[0]))
-    number_of_lives = how_many_chance()
-
+    number_of_lives = how_many_chance(gameSettingGui.how_many_lives_gui(), gameSettingGui.lives_number_less_gui(),
+                                      gameSettingGui.lives_number_higher_gui())
+    number_of_guesses = how_many_chance(gameSettingGui.how_many_guesses_gui(),
+                                        gameSettingGui.guesses_number_less_gui(),
+                                        gameSettingGui.guesses_number_higher_gui())
