@@ -40,7 +40,7 @@ def how_many_chance(question, too_less, too_many):
             print(gameSettingGui.input_wrong_data_gui())
 
 
-def start_game():
+def set_game_setting():
     player_names.append(name_player(gameSettingGui.entry_name_player_one_gui()))
     player_names.append(name_player(gameSettingGui.entry_name_player_two_gui(), player_names[0]))
     number_of_lives = how_many_chance(gameSettingGui.how_many_lives_gui(), gameSettingGui.lives_number_less_gui(),
@@ -48,3 +48,5 @@ def start_game():
     number_of_guesses = how_many_chance(gameSettingGui.how_many_guesses_gui(),
                                         gameSettingGui.guesses_number_less_gui(),
                                         gameSettingGui.guesses_number_higher_gui())
+
+    return player_names, number_of_lives, number_of_guesses

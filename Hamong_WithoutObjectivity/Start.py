@@ -1,3 +1,4 @@
-import Hamong_WithoutObjectivity.Logic.MainMenuLogic as main_menu_logic
+import Hamong_WithoutObjectivity.Logic.MainMenuLogic as mainMenuLogic
+import Hamong_WithoutObjectivity.Logic.GamePlayLogic as gamePlayLogic
 
-main_menu = main_menu_logic.main_menu_logic()
+gamePlayLogic.game_play(mainMenuLogic.main_menu_logic())
